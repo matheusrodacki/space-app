@@ -29,10 +29,16 @@ const IconeLupa = styled.img`
   height: 38px;
 `;
 
-export const CampoTexto = (props) => {
+export const CampoTexto = ({ setFiltro }) => {
   return (
     <ContainerStyled>
-      <InputStyled placeholder='O que você procura?' {...props} />
+      <InputStyled
+        onChange={(evento) => {
+          setFiltro(evento.target.value);
+        }}
+        type='text'
+        placeholder='O que você procura?'
+      />
       <IconeLupa src={search} alt='ícone de lupa' />
     </ContainerStyled>
   );

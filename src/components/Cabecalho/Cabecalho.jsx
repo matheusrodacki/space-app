@@ -10,11 +10,11 @@ const HeaderStyled = styled.header`
   }
 `;
 
-export const Cabecalho = () => {
+export const Cabecalho = ({ filtro, setFiltro }) => {
   return (
     <HeaderStyled>
       <img src='/images/logo.png' alt='' />
-      <CampoTexto />
+      <CampoTexto setFiltro={setFiltro} />
     </HeaderStyled>
   );
 };

@@ -37,13 +37,15 @@ const TagsContainerBtns = styled.div`
   }
 `;
 
-export const Tags = () => {
+export const Tags = ({ setTag }) => {
   return (
     <TagsContainerConteudo>
       <p>Busque por tags:</p>
       <TagsContainerBtns>
         {tags.map((tag) => (
-          <button key={tag.id}>{tag.titulo}</button>
+          <button key={tag.id} onClick={() => setTag(tag.tag)}>
+            {tag.titulo}
+          </button>
         ))}
       </TagsContainerBtns>
     </TagsContainerConteudo>
