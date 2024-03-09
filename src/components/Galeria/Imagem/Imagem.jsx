@@ -38,19 +38,23 @@ const FigureStyled = styled.figure`
   }
 `;
 
-export const Imagem = ({ titulo, fonte, path, expandida }) => {
+export const Imagem = ({ foto, expandida, aoZoomSolicitado }) => {
   return (
     <FigureStyled $expandida={expandida}>
-      <img src={path} alt='' />
+      <img src={foto.path} alt='' />
       <figcaption>
-        <h3>{titulo}</h3>
+        <h3>{foto.titulo}</h3>
         <footer>
-          <p>Fonte/{fonte}</p>
+          <p>Fonte/{foto.fonte}</p>
           <BotaoIcone>
             <img src='/icons/favorito.png' alt='Icone de favorito' />
           </BotaoIcone>
           {!expandida && (
-            <BotaoIcone aria-hidden={expandida}>
+            <BotaoIcone
+              aria-hidden={expandida}
+              onClick={() => {
+                aoZoomSolicitado(foto);
+              }}>
               <img src='/icons/expandir.png' alt='Icone de expandir' />
             </BotaoIcone>
           )}
