@@ -20,22 +20,24 @@ const FigureStyled = styled.figure`
     color: #ffffff;
     box-sizing: border-box;
     padding: 12px;
-    h3,
-    footer {
-      margin: 0;
-    }
     h3 {
       font-family: 'GandhiSansBold';
-      font-weight: 700;
-      font-size: 20;
-      line-height: 24px;
     }
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    p {
+      flex-grow: 1;
+    }
+    h3,
+    p {
+      margin: 0;
+      font-size: 16px;
     }
   }
+`;
+
+const Rodape = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Imagem = ({ foto, expandida, aoZoomSolicitado }) => {
@@ -44,7 +46,7 @@ export const Imagem = ({ foto, expandida, aoZoomSolicitado }) => {
       <img src={foto.path} alt='' />
       <figcaption>
         <h3>{foto.titulo}</h3>
-        <footer>
+        <Rodape>
           <p>Fonte/{foto.fonte}</p>
           <BotaoIcone>
             <img src='/icons/favorito.png' alt='Icone de favorito' />
@@ -58,7 +60,7 @@ export const Imagem = ({ foto, expandida, aoZoomSolicitado }) => {
               <img src='/icons/expandir.png' alt='Icone de expandir' />
             </BotaoIcone>
           )}
-        </footer>
+        </Rodape>
       </figcaption>
     </FigureStyled>
   );
