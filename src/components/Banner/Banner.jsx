@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const FigureEstilizado = styled.figure`
   background-image: ${(props) => `url(${props.$backgroundImage})`};
   background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-grow: 1;
   align-items: center;
